@@ -123,6 +123,3 @@ Este projeto é fornecido **apenas para fins educacionais e testes em ambientes 
 ```
 
 ---
-
-Se quiser, posso gerar a **imagem preview da UI (`./assets/preview.png`)** automaticamente também! Deseja isso?
-```
